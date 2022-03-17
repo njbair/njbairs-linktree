@@ -1,0 +1,9 @@
+baseURL: 'http://example.org/'
+languageCode: 'en-us'
+title: "@njbair's Link Tree"
+theme: 'linktree'
+disableKinds:
+  - 'taxonomy'
+  - 'term'
+ignoreErrors:
+  - 'error-disable-taxonomy'

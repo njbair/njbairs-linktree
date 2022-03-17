@@ -1,0 +1,123 @@
+@import 'normalize-scss/sass/normalize';
+
+@include normalize();
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 3rem;
+  background: #333;
+  color: #eee;
+  font-size: 2rem;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 300;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 3rem;
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+    font-stretch: 100%;
+    line-height: 1;
+  }
+}
+
+.main {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.avatar {
+  display: inline-block;
+  width: 13rem;
+  margin-bottom: 2rem;
+
+  img {
+    clip-path: circle(50%);
+    max-width: 100%;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li {
+    margin-bottom: 1rem;
+    line-height: 3rem;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 1rem 5rem;
+      border-radius: .5rem;
+      background-color: #222;
+      color: #eee;
+      text-decoration: none;
+      animation-name: mouseOut;
+      animation-duration: .15s;
+      animation-fill-mode: forwards;
+
+      &:hover,
+      &:focus {
+        animation-name: mouseIn;
+      }
+    }
+  }
+
+  .icon {
+    position: absolute;
+    left: 2rem;
+    margin-right: 1rem;
+    font-size: 3rem;
+    color: #888;
+  }
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #888;
+}
+
+@keyframes mouseIn {
+  0% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes mouseOut {
+  0% {
+    transform: scale(1.05);
+  }
+  75% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

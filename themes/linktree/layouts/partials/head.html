@@ -1,0 +1,17 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/4a3268f9f3.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&display=swap" rel="stylesheet">
+
+  {{/*  <link rel="stylesheet" type="text/css" href="/css/style.css">  */}}
+
+  {{ $options := (dict "targetPath" "main.css" "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+  {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" />
+
+  {{ $title := print .Site.Title " | " .Title }}
+  <title>{{ $title }}</title>
+</head>

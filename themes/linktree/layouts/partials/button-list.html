@@ -1,0 +1,14 @@
+{{ range (where $.Site.Pages "Type" "links") }}
+  <ul class="links">
+    {{ range .Pages }}
+      <li>
+        <a href="{{ .Params.Link }}">
+          <span class="icon">
+            <i class="{{ .Params.Icon }}"></i>
+          </span>
+          {{ .Title }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}

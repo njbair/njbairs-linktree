@@ -1,0 +1,14 @@
+<div id="tagline" class="tagline">
+  <p>
+    <i class="fa-duotone fa-spinner-third fa-spin"></i>
+    Fetching link pun...
+  </p>
+</div>
+<script>
+  fetch('/taglines/index.json')
+    .then(response => response.json())
+    .then(data => {
+      let tagline = data[Math.floor(Math.random() * data.length)]
+      document.getElementById('tagline').innerHTML = tagline
+    })
+</script>
