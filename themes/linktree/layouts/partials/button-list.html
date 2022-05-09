@@ -1,6 +1,6 @@
 {{ range (where $.Site.Pages "Type" "links") }}
   <ul class="links">
-    {{ range .Pages }}
+    {{ range sort .Pages ".Weight" }}
       <li>
         <a href="{{ .Params.Link }}">
           <span class="icon">
